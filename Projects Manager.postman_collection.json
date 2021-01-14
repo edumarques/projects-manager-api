@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "905e3ff1-eab6-43c2-8881-edabc2be1721",
+		"name": "Projects Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST localhost:8000/api/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eduardo Marques\",\r\n    \"email\": \"eduardo@email.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Register a new user."
+			},
+			"response": []
+		},
+		{
+			"name": "POST localhost:8000/api/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eduardo@email.com\",\r\n    \"password\": \"12345\",\r\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTc5ZjBhNjY4Yjc2Y2IwZWY0NjA2OGQ3NDllNThlNzExZWQyZDgxNjU3YzEyZTFhOTMyYmZjYWNhMmE2N2EyOGIyNzVmODIwZjdkNzk3MTkiLCJpYXQiOiIxNjEwNTg2Njg3LjkxODkyNSIsIm5iZiI6IjE2MTA1ODY2ODcuOTE4OTQ3IiwiZXhwIjoiMTY0MjEyMjY4Ny42NzQ0NTMiLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.ECdV45PPtFzI4PK_P4CF8_VErUDcWizV-LO14--hy5fOrNGt_Tv7FOsVOXmV8SAN_Ap_e-ZkXXefqw6lu_XS1NJq5Rm7H0KYRtd01h5XW1doTFEImx3VLRGqdtBBKX2dB7aWgNgb2wVxcy1Wfu9E1xuOJjaCcfTYgvuCY7yzBo2pES2i-Ovu4HMv-1DOegqJPoKPyn_FjSnfCd9g8E6QxW8Ngb2TOt8rOkTVz2wXMPqvyxNLQ1F1MF-UGDQ3DrqU4u3bETRGMx_eKX_m76quZrx3XKXWYv913_1G7REFF6fumZ_z6ArKvH69TsCdElToRYsat5nlu7T1RmsQUaaM66njDb9Ufkq-iurZq6uF51LRzytQhvekoGF_ydjMFNvzosJp5caoX8IhY8ARsFafQzTPlyyqbbILzLgnv2zIfe8ACaIUPWu9jlribV1t4FjYXSec9SCvMK0OrNoTZpq--_8nokRH3MEkcT1pFnfSBUzDshcwySXrUChIPQ2lNlSweHmye-XF9ULTcQXdTScpFe-2kzA4yw6PyeUXeSmkn65L-_rxoMLNC8Sxh8rWuCNatElsBnNyVbs8YKr9pdGruoAioHM7jaop6_c25Qzqj1kFBDZrnAcrIYElXS1OU6AKiaSrR1UwBZ-sGzCISUppfR5bKyUZkAH0U5fQgZ0qKC4\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Login an user."
+			},
+			"response": []
+		},
+		{
+			"name": "GET localhost:8000/api/projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjFmZjk5MjgwYTk4MjAzM2U5MTA3YjdkYjZkYjllNjYxNzllY2JkYzhjOWE0NzBmZjgwNGZiYmU2M2E4Y2EzMThiZTk0ODRiYWJiYjg3NjAiLCJpYXQiOiIxNjEwNTg4MzUyLjMyMTMxMSIsIm5iZiI6IjE2MTA1ODgzNTIuMzIxMzQ3IiwiZXhwIjoiMTY0MjEyNDM1Mi4yMzI0NDMiLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.yFFK6B4HYWsizzyWWI0uifHaReGwOHHkVVMgte2JP7pJEI9qG29h-RdhkRTcceJm1hNUl6j1cjZpwX19NlSF-qvHB7EaLy43sbbjiF-PISs4yIDJKZ_1uhrhc-2XFcq9jLhltJCF_21VwEgd1TW_gHpdZjEnGJXxw9Ys7tf8sJkkYjCfQkVLExPvNnNVwvt-Mu1Qn-S_E2xJglhJYNirXrVCE6jTGzfN8EBF2_0LEe4bn2rF1S8luzc_2SHhddTt1yXWRl4rt3R6gu5rbGJlE2vipzM0xfwxx7QyNRJn-tQl5EVeThf65UGioIsVRy7VfWl8CCt_LvrtdaPfkI3BSCwTRHH2jVxxVyqg7kb7y4T_qlXADlbPhUX4Dml7Xa60aL9Ut_14dTy8FUPlCbE0_J-HXopqw6ZWvtgQQqk5R77y6RspEGUcD0KR_lnrB8xVdoiRfDPKtA-XAiUXpx5-yrMo2Q6IVA52GE8CrTbrrvQ308Jz7f8ZAWAEZJZ6fSLGjBSP64PccKv7Lr3mOn89VLVWGG0gJNd7L6fp7cXK-CJqoa7PRsAhmYifms8W6d2c_tencK_HUt5L40Db0xmZGl8bGaghWIXDUMRZKwV3-D8b2YHIgfkS-g5HE9QDa9Hlfr35giMKXEdzBRNmIpRsDZYQe-_Tco0rw4owwvZXNjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/projects",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects"
+					]
+				},
+				"description": "Display a listing of projects."
+			},
+			"response": []
+		},
+		{
+			"name": "POST localhost:8000/api/projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjFmZjk5MjgwYTk4MjAzM2U5MTA3YjdkYjZkYjllNjYxNzllY2JkYzhjOWE0NzBmZjgwNGZiYmU2M2E4Y2EzMThiZTk0ODRiYWJiYjg3NjAiLCJpYXQiOiIxNjEwNTg4MzUyLjMyMTMxMSIsIm5iZiI6IjE2MTA1ODgzNTIuMzIxMzQ3IiwiZXhwIjoiMTY0MjEyNDM1Mi4yMzI0NDMiLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.yFFK6B4HYWsizzyWWI0uifHaReGwOHHkVVMgte2JP7pJEI9qG29h-RdhkRTcceJm1hNUl6j1cjZpwX19NlSF-qvHB7EaLy43sbbjiF-PISs4yIDJKZ_1uhrhc-2XFcq9jLhltJCF_21VwEgd1TW_gHpdZjEnGJXxw9Ys7tf8sJkkYjCfQkVLExPvNnNVwvt-Mu1Qn-S_E2xJglhJYNirXrVCE6jTGzfN8EBF2_0LEe4bn2rF1S8luzc_2SHhddTt1yXWRl4rt3R6gu5rbGJlE2vipzM0xfwxx7QyNRJn-tQl5EVeThf65UGioIsVRy7VfWl8CCt_LvrtdaPfkI3BSCwTRHH2jVxxVyqg7kb7y4T_qlXADlbPhUX4Dml7Xa60aL9Ut_14dTy8FUPlCbE0_J-HXopqw6ZWvtgQQqk5R77y6RspEGUcD0KR_lnrB8xVdoiRfDPKtA-XAiUXpx5-yrMo2Q6IVA52GE8CrTbrrvQ308Jz7f8ZAWAEZJZ6fSLGjBSP64PccKv7Lr3mOn89VLVWGG0gJNd7L6fp7cXK-CJqoa7PRsAhmYifms8W6d2c_tencK_HUt5L40Db0xmZGl8bGaghWIXDUMRZKwV3-D8b2YHIgfkS-g5HE9QDa9Hlfr35giMKXEdzBRNmIpRsDZYQe-_Tco0rw4owwvZXNjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Project 1\",\r\n    \"introduction\": \"Project 1's introduction\",\r\n    \"location\": \"Brazil\",\r\n    \"cost\": 1555.65\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/projects",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects"
+					]
+				},
+				"description": "Store a newly created project in storage."
+			},
+			"response": []
+		},
+		{
+			"name": "GET localhost:8000/api/projects/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjFmZjk5MjgwYTk4MjAzM2U5MTA3YjdkYjZkYjllNjYxNzllY2JkYzhjOWE0NzBmZjgwNGZiYmU2M2E4Y2EzMThiZTk0ODRiYWJiYjg3NjAiLCJpYXQiOiIxNjEwNTg4MzUyLjMyMTMxMSIsIm5iZiI6IjE2MTA1ODgzNTIuMzIxMzQ3IiwiZXhwIjoiMTY0MjEyNDM1Mi4yMzI0NDMiLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.yFFK6B4HYWsizzyWWI0uifHaReGwOHHkVVMgte2JP7pJEI9qG29h-RdhkRTcceJm1hNUl6j1cjZpwX19NlSF-qvHB7EaLy43sbbjiF-PISs4yIDJKZ_1uhrhc-2XFcq9jLhltJCF_21VwEgd1TW_gHpdZjEnGJXxw9Ys7tf8sJkkYjCfQkVLExPvNnNVwvt-Mu1Qn-S_E2xJglhJYNirXrVCE6jTGzfN8EBF2_0LEe4bn2rF1S8luzc_2SHhddTt1yXWRl4rt3R6gu5rbGJlE2vipzM0xfwxx7QyNRJn-tQl5EVeThf65UGioIsVRy7VfWl8CCt_LvrtdaPfkI3BSCwTRHH2jVxxVyqg7kb7y4T_qlXADlbPhUX4Dml7Xa60aL9Ut_14dTy8FUPlCbE0_J-HXopqw6ZWvtgQQqk5R77y6RspEGUcD0KR_lnrB8xVdoiRfDPKtA-XAiUXpx5-yrMo2Q6IVA52GE8CrTbrrvQ308Jz7f8ZAWAEZJZ6fSLGjBSP64PccKv7Lr3mOn89VLVWGG0gJNd7L6fp7cXK-CJqoa7PRsAhmYifms8W6d2c_tencK_HUt5L40Db0xmZGl8bGaghWIXDUMRZKwV3-D8b2YHIgfkS-g5HE9QDa9Hlfr35giMKXEdzBRNmIpRsDZYQe-_Tco0rw4owwvZXNjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/projects/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				},
+				"description": "Display the specified project."
+			},
+			"response": []
+		},
+		{
+			"name": "PUT localhost:8000/api/projects/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjFmZjk5MjgwYTk4MjAzM2U5MTA3YjdkYjZkYjllNjYxNzllY2JkYzhjOWE0NzBmZjgwNGZiYmU2M2E4Y2EzMThiZTk0ODRiYWJiYjg3NjAiLCJpYXQiOiIxNjEwNTg4MzUyLjMyMTMxMSIsIm5iZiI6IjE2MTA1ODgzNTIuMzIxMzQ3IiwiZXhwIjoiMTY0MjEyNDM1Mi4yMzI0NDMiLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.yFFK6B4HYWsizzyWWI0uifHaReGwOHHkVVMgte2JP7pJEI9qG29h-RdhkRTcceJm1hNUl6j1cjZpwX19NlSF-qvHB7EaLy43sbbjiF-PISs4yIDJKZ_1uhrhc-2XFcq9jLhltJCF_21VwEgd1TW_gHpdZjEnGJXxw9Ys7tf8sJkkYjCfQkVLExPvNnNVwvt-Mu1Qn-S_E2xJglhJYNirXrVCE6jTGzfN8EBF2_0LEe4bn2rF1S8luzc_2SHhddTt1yXWRl4rt3R6gu5rbGJlE2vipzM0xfwxx7QyNRJn-tQl5EVeThf65UGioIsVRy7VfWl8CCt_LvrtdaPfkI3BSCwTRHH2jVxxVyqg7kb7y4T_qlXADlbPhUX4Dml7Xa60aL9Ut_14dTy8FUPlCbE0_J-HXopqw6ZWvtgQQqk5R77y6RspEGUcD0KR_lnrB8xVdoiRfDPKtA-XAiUXpx5-yrMo2Q6IVA52GE8CrTbrrvQ308Jz7f8ZAWAEZJZ6fSLGjBSP64PccKv7Lr3mOn89VLVWGG0gJNd7L6fp7cXK-CJqoa7PRsAhmYifms8W6d2c_tencK_HUt5L40Db0xmZGl8bGaghWIXDUMRZKwV3-D8b2YHIgfkS-g5HE9QDa9Hlfr35giMKXEdzBRNmIpRsDZYQe-_Tco0rw4owwvZXNjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Project One\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/projects/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				},
+				"description": "Update the specified project in storage."
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH localhost:8000/api/projects/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjFmZjk5MjgwYTk4MjAzM2U5MTA3YjdkYjZkYjllNjYxNzllY2JkYzhjOWE0NzBmZjgwNGZiYmU2M2E4Y2EzMThiZTk0ODRiYWJiYjg3NjAiLCJpYXQiOiIxNjEwNTg4MzUyLjMyMTMxMSIsIm5iZiI6IjE2MTA1ODgzNTIuMzIxMzQ3IiwiZXhwIjoiMTY0MjEyNDM1Mi4yMzI0NDMiLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.yFFK6B4HYWsizzyWWI0uifHaReGwOHHkVVMgte2JP7pJEI9qG29h-RdhkRTcceJm1hNUl6j1cjZpwX19NlSF-qvHB7EaLy43sbbjiF-PISs4yIDJKZ_1uhrhc-2XFcq9jLhltJCF_21VwEgd1TW_gHpdZjEnGJXxw9Ys7tf8sJkkYjCfQkVLExPvNnNVwvt-Mu1Qn-S_E2xJglhJYNirXrVCE6jTGzfN8EBF2_0LEe4bn2rF1S8luzc_2SHhddTt1yXWRl4rt3R6gu5rbGJlE2vipzM0xfwxx7QyNRJn-tQl5EVeThf65UGioIsVRy7VfWl8CCt_LvrtdaPfkI3BSCwTRHH2jVxxVyqg7kb7y4T_qlXADlbPhUX4Dml7Xa60aL9Ut_14dTy8FUPlCbE0_J-HXopqw6ZWvtgQQqk5R77y6RspEGUcD0KR_lnrB8xVdoiRfDPKtA-XAiUXpx5-yrMo2Q6IVA52GE8CrTbrrvQ308Jz7f8ZAWAEZJZ6fSLGjBSP64PccKv7Lr3mOn89VLVWGG0gJNd7L6fp7cXK-CJqoa7PRsAhmYifms8W6d2c_tencK_HUt5L40Db0xmZGl8bGaghWIXDUMRZKwV3-D8b2YHIgfkS-g5HE9QDa9Hlfr35giMKXEdzBRNmIpRsDZYQe-_Tco0rw4owwvZXNjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Project 1\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/projects/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				},
+				"description": "Update the specified project in storage."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE localhost:8000/api/projects/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjFmZjk5MjgwYTk4MjAzM2U5MTA3YjdkYjZkYjllNjYxNzllY2JkYzhjOWE0NzBmZjgwNGZiYmU2M2E4Y2EzMThiZTk0ODRiYWJiYjg3NjAiLCJpYXQiOiIxNjEwNTg4MzUyLjMyMTMxMSIsIm5iZiI6IjE2MTA1ODgzNTIuMzIxMzQ3IiwiZXhwIjoiMTY0MjEyNDM1Mi4yMzI0NDMiLCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.yFFK6B4HYWsizzyWWI0uifHaReGwOHHkVVMgte2JP7pJEI9qG29h-RdhkRTcceJm1hNUl6j1cjZpwX19NlSF-qvHB7EaLy43sbbjiF-PISs4yIDJKZ_1uhrhc-2XFcq9jLhltJCF_21VwEgd1TW_gHpdZjEnGJXxw9Ys7tf8sJkkYjCfQkVLExPvNnNVwvt-Mu1Qn-S_E2xJglhJYNirXrVCE6jTGzfN8EBF2_0LEe4bn2rF1S8luzc_2SHhddTt1yXWRl4rt3R6gu5rbGJlE2vipzM0xfwxx7QyNRJn-tQl5EVeThf65UGioIsVRy7VfWl8CCt_LvrtdaPfkI3BSCwTRHH2jVxxVyqg7kb7y4T_qlXADlbPhUX4Dml7Xa60aL9Ut_14dTy8FUPlCbE0_J-HXopqw6ZWvtgQQqk5R77y6RspEGUcD0KR_lnrB8xVdoiRfDPKtA-XAiUXpx5-yrMo2Q6IVA52GE8CrTbrrvQ308Jz7f8ZAWAEZJZ6fSLGjBSP64PccKv7Lr3mOn89VLVWGG0gJNd7L6fp7cXK-CJqoa7PRsAhmYifms8W6d2c_tencK_HUt5L40Db0xmZGl8bGaghWIXDUMRZKwV3-D8b2YHIgfkS-g5HE9QDa9Hlfr35giMKXEdzBRNmIpRsDZYQe-_Tco0rw4owwvZXNjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/api/projects/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				},
+				"description": "Remove the specified project from storage."
+			},
+			"response": []
+		}
+	]
+}
